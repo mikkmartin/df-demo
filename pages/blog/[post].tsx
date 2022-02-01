@@ -1,7 +1,6 @@
 import { Layout } from 'components/Layout'
-import { posts, Post } from 'data'
-import Head from 'next/head'
 import { getRootUrl } from 'utils/rootUrl'
+import { posts, Post } from 'data'
 
 const PostPage = (post: Post) => {
   const { title } = post
@@ -13,8 +12,7 @@ const PostPage = (post: Post) => {
 }
 
 export const getServerSideProps = async ({ req }) => {
-  const post = posts[0]
-  post.coverImage = getRootUrl(req) + post.coverImage
+  const post = posts.map(post => ({ ...post, image: getRootUrl(req) + post.image }))[0]
   return {
     props: post,
   }

@@ -1,7 +1,8 @@
 import { Layout } from 'components/Layout'
+import { getRootUrl } from 'utils/rootUrl'
 import { products, Product } from 'data'
 import Head from 'next/head'
-import { getRootUrl } from 'utils/rootUrl'
+import { GetServerSideProps } from 'next'
 
 const PostPage = (product: Product) => {
   return (
@@ -15,9 +16,8 @@ const PostPage = (product: Product) => {
   )
 }
 
-export const getServerSideProps = async ({ req }) => {
-  const post = products[0]
-  post.image = getRootUrl(req) + post.image
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+  const post = products.map(product => ({ ...product, image: getRootUrl(req) + product.image }))[0]
   return {
     props: post,
   }

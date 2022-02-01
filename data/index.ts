@@ -1,5 +1,4 @@
 import headphones from './products/headphones.json'
-
 import post from './posts/post.json'
 
 export interface Product {
@@ -15,7 +14,7 @@ export interface Post {
   slug: string
   title: string
   excerpt: string
-  coverImage: string
+  image: string
   date: string
   author: Author
 }
