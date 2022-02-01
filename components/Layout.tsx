@@ -7,10 +7,10 @@ export const Layout = ({ children, ...props }) => {
       <Header>
         <Headline>Hello!</Headline>
         <div>
-          <Link href="/">
+          <Link href="/blog/post">
             <a>Blog</a>
           </Link>
-          <Link href="/">
+          <Link href="/shop/headphones">
             <a>Shop</a>
           </Link>
         </div>
@@ -46,7 +46,10 @@ const Container = styled('div', {
 
 const Content = styled('div', {
   flex: 1,
-  paddingY: '$3'
+  paddingY: '$3',
+  img: {
+    maxWidth: '100%',
+  },
 })
 
 const Header = styled('div', {

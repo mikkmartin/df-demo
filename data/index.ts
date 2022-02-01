@@ -1,0 +1,28 @@
+import headphones from './products/headphones.json'
+
+import post from './posts/post.json'
+
+export interface Product {
+  slug: string
+  title: string
+  price: number
+  excerpt: string
+  facts?: string[] | null
+  image: string
+}
+
+export interface Post {
+  slug: string
+  title: string
+  excerpt: string
+  coverImage: string
+  date: string
+  author: Author
+}
+export interface Author {
+  name: string
+  picture: string
+}
+
+export const products: Product[] = [headphones]
+export const posts: Post[] = [post]

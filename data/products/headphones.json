@@ -1,0 +1,12 @@
+{
+  "slug": "headphones",
+  "title": "M-1 personal monitor",
+  "price": 79,
+  "excerpt": "foldable headphones with detachable and built in microphones. M-1 is perfect for voice sampling with OP-Z. 1200 mm audio cable with 3.5 mm 4-pole (trrs) plug connectors included.",
+  "facts": [
+    "frequency response: 20 Hz - 20 kHz (mic: 100 Hz - 10 kHz)",
+    "driver sensitivity: 100 dB SPL ±3 dB @ 1 kHz",
+    "driver impedance: 32 Ω"
+  ],
+  "image": "/images/headphones.avif"
+}
