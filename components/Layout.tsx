@@ -5,7 +5,9 @@ export const Layout = ({ children, ...props }) => {
   return (
     <Container size={{ '@initial': '1', '@bp1': '2' }} {...props}>
       <Header>
-        <Headline>Hello!</Headline>
+        <Link href="/">
+          <Headline>Home</Headline>
+        </Link>
         <div>
           <Link href="/blog/post">
             <a>Blog</a>
