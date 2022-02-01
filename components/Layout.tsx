@@ -1,12 +1,33 @@
 import { styled } from '../stitches.config'
+import Link from 'next/link'
 
-export const Layout = ({ children }) => {
-  return <Container size={{ '@initial': '1', '@bp1': '2' }}>{children}</Container>
+export const Layout = ({ children, ...props }) => {
+  return (
+    <Container size={{ '@initial': '1', '@bp1': '2' }} {...props}>
+      <Header>
+        <Headline>Hello!</Headline>
+        <div>
+          <Link href="/">
+            <a>Blog</a>
+          </Link>
+          <Link href="/">
+            <a>Shop</a>
+          </Link>
+        </div>
+      </Header>
+      <Content>{children}</Content>
+      <small>2022 © Your Name.</small>
+    </Container>
+  )
 }
 
 const Container = styled('div', {
   marginX: 'auto',
-  paddingX: '$3',
+  minHeight: '100vh',
+  paddingY: '$6',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'stretch',
 
   variants: {
     size: {
@@ -21,4 +42,24 @@ const Container = styled('div', {
       },
     },
   },
+})
+
+const Content = styled('div', {
+  flex: 1,
+  paddingY: '$3'
+})
+
+const Header = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  '> div': {
+    display: 'flex',
+    gap: '32px',
+  },
+})
+
+const Headline = styled('h1', {
+  fontSize: '$6',
+  fontWeight: 200,
 })

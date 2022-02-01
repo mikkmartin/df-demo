@@ -19,6 +19,8 @@ export const { config, createTheme, css, getCssText, globalCss, styled, theme } 
       purple400: 'hsl(252,75%,84%)',
       purple500: 'hsl(252,78%,60%)',
       purple600: 'hsl(252,80%,53%)',
+
+      blue200: 'hsl(216deg 100% 50%)',
     },
     space: {
       1: '5px',
@@ -73,8 +75,21 @@ export const { config, createTheme, css, getCssText, globalCss, styled, theme } 
 })
 
 export const globalStyles = globalCss({
+  '*': {
+    margin: 0,
+    padding: 0,
+    boxSizing: 'border-box',
+  },
   ':root': {
     backgroundColor: '$gray300',
     fontFamily: '$system',
+  },
+  a: {
+    textDecoration: 'none',
+    color: '$blue200',
+    '&:hover': {
+      color: 'white',
+      background: '$blue200',
+    },
   },
 })
