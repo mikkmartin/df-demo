@@ -42,7 +42,7 @@ export const { config, createTheme, css, getCssText, globalCss, styled, theme } 
       3: '15px',
       4: '17px',
       5: '19px',
-      6: '21px',
+      6: '42px',
     },
     fonts: {
       system: '"JetBrains Mono", monospace',
