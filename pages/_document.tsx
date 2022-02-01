@@ -1,15 +1,19 @@
 import React from 'react'
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import { getCssText } from '../stitches.config'
+import { getCssText, globalStyles } from '../stitches.config'
 
 export default class Document extends NextDocument {
   render() {
+    globalStyles()
     return (
       <Html lang="en">
         <Head>
-          <style
-            id="stitches"
-            dangerouslySetInnerHTML={{ __html: getCssText() }}
+          <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
+            rel="stylesheet"
           />
         </Head>
         <body>

@@ -1,14 +1,6 @@
 import { createStitches } from '@stitches/react'
 
-export const {
-  config,
-  createTheme,
-  css,
-  getCssText,
-  globalCss,
-  styled,
-  theme,
-} = createStitches({
+export const { config, createTheme, css, getCssText, globalCss, styled, theme } = createStitches({
   theme: {
     colors: {
       hiContrast: 'hsl(206,10%,5%)',
@@ -53,23 +45,23 @@ export const {
       6: '21px',
     },
     fonts: {
-      system: 'system-ui',
+      system: 'font-family: "JetBrains Mono", monospace',
     },
   },
   utils: {
-    marginX: (value) => ({
+    marginX: value => ({
       marginLeft: value,
       marginRight: value,
     }),
-    marginY: (value) => ({
+    marginY: value => ({
       marginTop: value,
       marginBottom: value,
     }),
-    paddingX: (value) => ({
+    paddingX: value => ({
       paddingLeft: value,
       paddingRight: value,
     }),
-    paddingY: (value) => ({
+    paddingY: value => ({
       paddingTop: value,
       paddingBottom: value,
     }),
@@ -77,5 +69,11 @@ export const {
   media: {
     bp1: '(min-width: 520px)',
     bp2: '(min-width: 900px)',
+  },
+})
+
+export const globalStyles = globalCss({
+  ':root': {
+    backgroundColor: 'gray',
   },
 })
