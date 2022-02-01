@@ -45,7 +45,7 @@ export const { config, createTheme, css, getCssText, globalCss, styled, theme } 
       6: '21px',
     },
     fonts: {
-      system: 'font-family: "JetBrains Mono", monospace',
+      system: '"JetBrains Mono", monospace',
     },
   },
   utils: {
@@ -74,6 +74,7 @@ export const { config, createTheme, css, getCssText, globalCss, styled, theme } 
 
 export const globalStyles = globalCss({
   ':root': {
-    backgroundColor: 'gray',
+    backgroundColor: '$gray300',
+    fontFamily: '$system',
   },
 })
