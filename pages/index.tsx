@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <Layout>
       <p>
-        Hey, I'm a Senior Software Engineer at Company. I enjoy working with Next.js and crafting
+        Hey! I'm a Senior Software Engineer at Company. I enjoy working with Next.js and crafting
         beautiful front-end experiences.
       </p>
       <p>
