@@ -1,4 +1,5 @@
 import headphones from './products/headphones.json'
+import pocket from './products/pocket-operator.json'
 import post from './posts/post.json'
 
 export interface Product {
@@ -23,5 +24,5 @@ export interface Author {
   picture: string
 }
 
-export const products: Product[] = [headphones]
+export const products: Product[] = [headphones, pocket]
 export const posts: Post[] = [post]
