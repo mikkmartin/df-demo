@@ -6,19 +6,24 @@ export const Layout = ({ children, ...props }) => {
     <Container size={{ '@initial': '1', '@bp1': '2' }} {...props}>
       <Header>
         <Link href="/">
-          <Headline>Home</Headline>
+          <Headline>Site name</Headline>
         </Link>
         <div>
-          <Link href="/blog/post">
+          <Link href="/blog">
             <a>Blog</a>
           </Link>
-          <Link href="/shop/headphones">
+          <Link href="/shop">
             <a>Shop</a>
           </Link>
         </div>
       </Header>
       <Content>{children}</Content>
-      <small>2022 © Your Name.</small>
+      <Footer>
+        <small>2022 © Your Name.</small>
+        <a href="https://twitter.com/designfactapp" target="_blank">
+          <small>@designfactapp</small>
+        </a>
+      </Footer>
     </Container>
   )
 }
@@ -26,11 +31,10 @@ export const Layout = ({ children, ...props }) => {
 const Container = styled('div', {
   marginX: 'auto',
   minHeight: '100vh',
-  paddingY: '$6',
+  paddingTop: '6vh',
+  paddingBottom: '$6',
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'stretch',
-
   variants: {
     size: {
       1: {
@@ -48,10 +52,16 @@ const Container = styled('div', {
 
 const Content = styled('div', {
   flex: 1,
-  paddingY: '$3',
+  paddingTop: '$6',
+  paddingBottom: '$2',
   img: {
     maxWidth: '100%',
   },
+})
+
+const Footer = styled('div', {
+  display: 'flex',
+  justifyContent: 'space-between',
 })
 
 const Header = styled('div', {
@@ -65,6 +75,6 @@ const Header = styled('div', {
 })
 
 const Headline = styled('h1', {
-  fontSize: '$6',
+  fontSize: '$5',
   fontWeight: 200,
 })

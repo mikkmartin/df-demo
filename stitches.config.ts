@@ -3,40 +3,30 @@ import { createStitches } from '@stitches/react'
 export const { config, createTheme, css, getCssText, globalCss, styled, theme } = createStitches({
   theme: {
     colors: {
-      hiContrast: 'hsl(206,10%,5%)',
-      loContrast: 'white',
+      gray100: 'hsl(206, 22%, 99%)',
+      gray200: 'hsl(206, 12%, 97%)',
 
-      gray100: 'hsl(206,22%,99%)',
-      gray200: 'hsl(206,12%,97%)',
-      gray300: 'hsl(206,11%,92%)',
-      gray400: 'hsl(206,10%,84%)',
-      gray500: 'hsl(206,10%,76%)',
-      gray600: 'hsl(206,10%,44%)',
+      blue100: 'hsl(216, 100%, 40%)',
+      blue200: 'hsl(216, 100%, 50%)',
 
-      purple100: 'hsl(252,100%,99%)',
-      purple200: 'hsl(252,100%,98%)',
-      purple300: 'hsl(252,100%,94%)',
-      purple400: 'hsl(252,75%,84%)',
-      purple500: 'hsl(252,78%,60%)',
-      purple600: 'hsl(252,80%,53%)',
-
-      blue200: 'hsl(216deg 100% 50%)',
+      highlight: '$blue200',
+      backgroundColor: '$gray300',
     },
     space: {
-      1: '5px',
-      2: '10px',
-      3: '15px',
-      4: '20px',
-      5: '25px',
-      6: '35px',
+      1: '6px',
+      2: '12px',
+      3: '18px',
+      4: '24px',
+      5: '30px',
+      6: '36px',
     },
     sizes: {
-      1: '5px',
-      2: '10px',
-      3: '15px',
-      4: '20px',
-      5: '25px',
-      6: '35px',
+      1: '6px',
+      2: '12px',
+      3: '18px',
+      4: '24px',
+      5: '30px',
+      6: '36px',
     },
     fontSizes: {
       1: '12px',
@@ -81,15 +71,15 @@ export const globalStyles = globalCss({
     boxSizing: 'border-box',
   },
   ':root': {
-    backgroundColor: '$gray300',
+    backgroundColor: '$backgroundColor',
     fontFamily: '$system',
   },
   a: {
     textDecoration: 'none',
-    color: '$blue200',
+    color: '$highlight',
     '&:hover': {
       color: 'white',
-      background: '$blue200',
+      background: '$highlight',
     },
   },
 })
