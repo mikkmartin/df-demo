@@ -5,9 +5,10 @@ import Head from 'next/head'
 import { GetServerSideProps } from 'next'
 import { styled } from 'stitches.config'
 import { Button } from 'components/Button'
+import { FC } from 'react'
 
-const PostPage = (product: Product) => {
-  const { image, price, title } = product
+const PostPage: FC<Product> = props => {
+  const { image, price, title } = props
 
   return (
     <Layout>
@@ -33,26 +34,25 @@ const PostPage = (product: Product) => {
 const Content = styled('div', {
   display: 'grid',
   '> *': {
-    gridArea: '1 / 1'
+    gridArea: '1 / 1',
   },
   img: {
-    zIndex: 2
+    zIndex: 2,
   },
   button: {
-    placeSelf: 'end end'
+    placeSelf: 'end end',
   },
   '&:hover img': {
-    zIndex: -1
-  }
+    zIndex: -1,
+  },
 })
 
-export const getServerSideProps: GetServerSideProps = async ({ req, params }) => {
-  const post = products
+export const getServerSideProps: GetServerSideProps<Product> = async ({ req, params }) => {
+  const props = products
     .map(product => ({ ...product, image: getRootUrl(req) + product.image }))
     .find(p => p.slug === (params?.product as string))
-  return {
-    props: post
-  }
+  if (!props) return { notFound: true }
+  return { props }
 }
 
 export default PostPage
