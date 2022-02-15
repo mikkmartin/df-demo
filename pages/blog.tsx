@@ -7,12 +7,12 @@ import Link from 'next/link'
 const Blog = ({ posts }: { posts: Post[] }) => {
   return (
     <Layout>
-      {posts.map(post => (
-        <div>
-          <Link href={`/blog/${post.slug}`}>
-            <a>{post.title}</a>
-          </Link>
-        </div>
+      {[...posts, ...posts].map(post => (
+        <Link key={post.slug} href={`/blog/${post.slug}`}>
+          <a>
+            <h1>{post.title}</h1>
+          </a>
+        </Link>
       ))}
     </Layout>
   )

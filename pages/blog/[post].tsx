@@ -3,10 +3,13 @@ import { getRootUrl } from 'utils/rootUrl'
 import { posts, Post } from 'data'
 
 const PostPage = (post: Post) => {
-  const { title } = post
+  const { title, content } = post
   return (
     <Layout>
       <h1>{title}</h1>
+      {content.map((p, i) => (
+        <p key={i}>{p}</p>
+      ))}
     </Layout>
   )
 }

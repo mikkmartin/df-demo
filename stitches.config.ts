@@ -82,4 +82,7 @@ export const globalStyles = globalCss({
       background: '$highlight',
     },
   },
+  p: {
+    marginY: '$3',
+  }
 })
