@@ -1,7 +1,7 @@
-export { getServerSideProps } from './_getServerSideProps'
 import Head from 'next/head'
 import { Layout } from 'components/Layout'
 import { Post } from 'data'
+export { getServerSideProps } from './_getServerSideProps'
 
 export default function PostPage(post: Post) {
   const { title, content, excerpt } = post
