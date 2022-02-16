@@ -9,7 +9,7 @@ const Blog = ({ posts }: { posts: Post[] }) => {
   return (
     <Layout>
       {posts.map(post => (
-        <Link key={post.slug} href={`/blog/${post.slug}`}>
+        <Link key={post.slug} href={`/blog/${post.slug}`} passHref>
           <LinkItem>
             <h1>{post.title}</h1>
             <p>{post.excerpt}</p>
