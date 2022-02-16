@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const Layout = ({ children, ...props }) => {
   return (
-    <Container size={{ '@initial': '1', '@bp1': '2' }} {...props}>
+    <Container size={{ '@initial': '1', '@bp1': '3' }} {...props}>
       <Header>
         <Link href="/">
           <Headline>Site name</Headline>
@@ -54,6 +54,9 @@ const Content = styled('div', {
   flex: 1,
   paddingTop: '$6',
   paddingBottom: '$2',
+  margin: 'auto',
+  paddingX: '$3',
+  width: '100%',
   img: {
     maxWidth: '100%',
   },
@@ -61,6 +64,7 @@ const Content = styled('div', {
 
 const Footer = styled('div', {
   display: 'flex',
+  marginTop: '$6',
   justifyContent: 'space-between',
 })
 

@@ -84,5 +84,5 @@ export const globalStyles = globalCss({
   },
   p: {
     marginY: '$3',
-  }
+  },
 })
