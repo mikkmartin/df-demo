@@ -38,13 +38,16 @@ const Container = styled('div', {
   variants: {
     size: {
       1: {
-        maxWidth: '300px',
+        maxWidth: '100%',
+        paddingX: '2rem',
       },
       2: {
         maxWidth: '585px',
+        paddingX: '2rem',
       },
       3: {
         maxWidth: '865px',
+        paddingX: '2rem',
       },
     },
   },
