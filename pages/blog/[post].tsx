@@ -10,6 +10,11 @@ export default function PostPage(post: Post) {
       <Head>
         <meta property="og:title" content={title} />
         <meta property="og:description" content={excerpt} />
+        <meta
+          property="og:image"
+          content={`https://dev.designfactory.app/files/untitled-8xk4e.png?title=${title}`}
+        />
+        <meta property="twitter:card" content="summary_large_image" />
       </Head>
       <h1>{title}</h1>
       {content.map((p, i) => (

@@ -8,16 +8,19 @@ import { Button } from 'components/Button'
 import { FC } from 'react'
 
 const PostPage: FC<Product> = props => {
-  const { image, price, title } = props
+  const { image, price, title: _title, excerpt } = props
+  const title = _title.charAt(0).toUpperCase() + _title.slice(1)
 
   return (
     <Layout>
       <Head>
         <meta
           property="og:image"
-          content={`https://dev.designfactory.app/files/product-bae3t.png?price=€299&photo=${image}&product-name=${title}`}
+          content={`https://dev.designfactory.app/files/e-shop-og-i514n.png?price=€${price}&image=${image}&product-name=${title}`}
         />
         <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={excerpt} />
       </Head>
       <Content>
         <img src={image} alt="" />
@@ -34,17 +37,17 @@ const PostPage: FC<Product> = props => {
 const Content = styled('div', {
   display: 'grid',
   '> *': {
-    gridArea: '1 / 1',
+    gridArea: '1 / 1'
   },
   img: {
-    zIndex: 2,
+    zIndex: 2
   },
   button: {
-    placeSelf: 'end end',
+    placeSelf: 'end end'
   },
   '&:hover img': {
-    zIndex: -1,
-  },
+    zIndex: -1
+  }
 })
 
 export const getServerSideProps: GetServerSideProps<Product> = async ({ req, params }) => {
