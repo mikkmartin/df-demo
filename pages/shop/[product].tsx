@@ -8,17 +8,11 @@ import { Button } from 'components/Button'
 import { FC } from 'react'
 
 const PostPage: FC<Product> = props => {
-  const { image, price, title: _title, excerpt } = props
-  const title = _title.charAt(0).toUpperCase() + _title.slice(1)
+  const { image, price, title, excerpt } = props
 
   return (
     <Layout>
       <Head>
-        <meta
-          property="og:image"
-          content={`https://dev.designfactory.app/files/e-shop-og-i514n.png?price=€${price}&image=${image}&product-name=${title}`}
-        />
-        <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={excerpt} />
       </Head>
@@ -40,13 +34,21 @@ const Content = styled('div', {
     gridArea: '1 / 1'
   },
   img: {
-    zIndex: 2
+    zIndex: 1
+  },
+  div: {
+    zIndex: 3,
+    pointerEvents: 'none',
+    'h1, h2': {
+      pointerEvents: 'auto'
+    }
   },
   button: {
-    placeSelf: 'end end'
+    placeSelf: 'end end',
+    zIndex: 2
   },
   '&:hover img': {
-    zIndex: -1
+    //zIndex: -1
   }
 })
 
