@@ -6,7 +6,7 @@ export const Layout = ({ children, ...props }) => {
     <Container size={{ '@initial': '1', '@bp1': '3' }} {...props}>
       <Header>
         <Link href="/">
-          <Headline>Site name</Headline>
+          <Headline>My site</Headline>
         </Link>
         <div>
           <Link href="/blog">
@@ -58,7 +58,6 @@ const Content = styled('div', {
   paddingTop: '$6',
   paddingBottom: '$2',
   margin: 'auto',
-  paddingX: '$3',
   width: '100%',
   img: {
     maxWidth: '100%',

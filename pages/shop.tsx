@@ -12,9 +12,19 @@ const Shop = ({ products }: { products: Product[] }) => {
       <Items>
         {products.map(product => (
           <Link key={product.slug} href={`/shop/${product.slug}`} passHref>
-            <Item>
-              <motion.h2 whileHover={{ x: 20, y: 10 }}>{product.title}</motion.h2>
-              <img src={product.image} />
+            <Item
+              animate="default"
+              whileHover="hovered"
+              whileTap="tapped"
+              variants={{
+                default: { scale: 1 },
+                tapped: { scale: 0.95, transition: { duration: 0 } },
+              }}>
+              <motion.h2>{product.title}</motion.h2>
+              <motion.img
+                variants={{ default: { scale: 1 }, hovered: { scale: 1.05 } }}
+                src={product.image}
+              />
             </Item>
           </Link>
         ))}
@@ -28,15 +38,26 @@ const Items = styled('ul', {
   gridTemplateColumns: '1fr 1fr 1fr',
   gap: '$3',
 })
-const Item = styled('a', {
+const Item = styled(motion.a, {
   display: 'grid',
   color: 'white',
   cursor: 'pointer',
+  borderRadius: 4,
   '> *': {
     gridArea: '1 / 1',
   },
-  '&:hover > h1': {
-    zIndex: 2,
+  h2: {
+    padding: '$1 $2',
+    color: 'transparent',
+    transition: 'color 0.05s ease-in-out',
+  },
+  '&:hover': {
+    h2: {
+      color: 'black',
+    },
+    h1: {
+      zIndex: 2,
+    },
   },
 })
 

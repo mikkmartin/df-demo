@@ -10,7 +10,7 @@ export const { config, createTheme, css, getCssText, globalCss, styled, theme } 
       blue200: 'hsl(216, 100%, 50%)',
 
       highlight: '$blue200',
-      backgroundColor: '$gray300',
+      backgroundColor: '$gray200',
     },
     space: {
       1: '6px',
@@ -78,8 +78,8 @@ export const globalStyles = globalCss({
     textDecoration: 'none',
     color: '$highlight',
     '&:hover': {
-      color: 'white',
-      background: '$highlight',
+      color: '$highlight',
+      background: 'white'
     },
   },
   p: {
